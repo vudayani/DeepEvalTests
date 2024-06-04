@@ -10,11 +10,11 @@ def read_file(file_path):
     with open(file_path, 'r') as file:
         return file.read()
 
-ACTUAL_OUTPUT_1 = read_file('/Users/vudayani/Desktop/copilot-agent/spring-petclinic/README-ai-spring-petclinic.md')
-EXPECTED_OUTPUT_1 = read_file('/Users/vudayani/Desktop/copilot-agent/spring-petclinic/README-ai-jpa-expected-output.md')
+ACTUAL_OUTPUT_1 = read_file('../../spring-petclinic/README-ai-spring-petclinic.md')
+EXPECTED_OUTPUT_1 = read_file('../../spring-petclinic/README-ai-jpa-expected-output.md')
 
-ACTUAL_OUTPUT_2 = read_file('/Users/vudayani/Desktop/copilot-agent/fortune-service/README-ai-fortune-service.md')
-EXPECTED_OUTPUT_2 = read_file('/Users/vudayani/Desktop/copilot-agent/fortune-service/README-ai-jpa-expected-output.md')
+ACTUAL_OUTPUT_2 = read_file('../../fortune-service/README-ai-fortune-service.md')
+EXPECTED_OUTPUT_2 = read_file('../../fortune-service/README-ai-jpa-expected-output.md')
 
 def test_case_boot_3():
     correctness_metric = GEval(
