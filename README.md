@@ -16,7 +16,7 @@ git clone git@github.com:vudayani-vmw/DeepEvalTests.git
 
 Before running the tests, ensure you have the following installed:
 
-- Python 3.6 or higher. If not installed, you can download it from [here](https://www.python.org/downloads/).
+- Python 3.8 or higher. If not installed, you can download it from [here](https://www.python.org/downloads/).
 - Pip (Python package installer)
 - Deepeval package: Install it using pip `pip install -U deepeval`
 
@@ -27,6 +27,24 @@ To run the tests, execute the following command:
 ```bash
 deepeval test run test_g_eval_metric.py
 ```
+
+## Running as a Docker Service
+
+An endpoint is now exposed to run Deepeval tests, allowing other services to interact with this application. You can run the application as a Docker service:
+
+1. Build the Docker image:
+
+```bash
+docker build -t deepeval-service .
+```
+
+1. Run the Docker container, exposing it on port 8000 and setting the necessary environment variable:
+
+```bash
+docker run -p 8000:8000 -e <OPENAI_API_KEY> deepeval-service
+```
+
+With the container running, the Deepeval service will be accessible at http://localhost:8000, ready to evaluate Copilot LLM responses through the exposed endpoints.
 
 ## Test case
 
