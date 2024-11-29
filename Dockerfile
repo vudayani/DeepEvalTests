@@ -6,6 +6,6 @@ COPY . /deepeval
 
 RUN pip install fastapi uvicorn deepeval
 
-WORKDIR /deepeval/tests
+WORKDIR /deepeval
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
